@@ -1,0 +1,9 @@
+; workspaces center
+;modules-left = margin round-left cpu round-right margin round-left memory round-right margin round-left wired round-right margin round-left title round-right
+;modules-center = round-left bspwm round-right
+;modules-right = round-left mpd round-right margin round-left pulseaudio round-right margin round-left date round-right margin
+;
+; date center
+modules-left = margin round-left bspwm round-right margin round-left title round-right
+modules-center = round-left package round-right margin round-left date round-right
+modules-right = round-left cpu round-right margin round-left memory round-right margin round-left wired round-right margin round-left mpd round-right margin round-left pulseaudio round-right
