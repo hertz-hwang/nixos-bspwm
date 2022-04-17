@@ -1,5 +1,5 @@
 {
-  description = "A very basic flake";
+  description = "My personal NixOS/Home-manager configurations";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -9,34 +9,21 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }:
+  outputs = inputs @ { self, nixpkgs, home-manager, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
-	config.allowUnfree = true;
+        config.allowUnfree = true;
       };
       lib = nixpkgs.lib;
       user = "jaus";
     in {
-      nixosConfigurations = {
-        ${user} = lib.nixosSystem {
-	  inherit system;
-	  modules = [
-	    ./configuration.nix
-	    home-manager.nixosModules.home-manager {
-	      home-manager = {
-	        useGlobalPkgs = true;
-		useUserPackages = true;
-		users.${user} = {
-		  imports = [ ./home.nix ];
-		};
-	      };
-	    }
-	  ];
-	};
-      };
-
+      nixosConfigurations = (
+        import ./nixos {
+	  inherit (nixpkgs) lib;
+	  inherit inputs user system home-manager;
+	}
+      );
     };
-
 }

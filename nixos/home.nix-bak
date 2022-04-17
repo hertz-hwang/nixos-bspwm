@@ -1,0 +1,55 @@
+{ config, lib, pkgs, inputs, user, ... }:
+{
+
+  imports = [
+    #../modules/desk-env/bspwm/home.nix
+  ];
+
+  home = {
+    username = "${user}";
+    homeDirectory = "/home/${user}";
+    packages = with pkgs; [
+      htop
+      kitty
+      rofi
+    ];
+  };
+
+  nixpkgs.config.allowUnfree = true;
+
+  programs = {
+    home-manager.enable = true;
+  };
+
+#  xsession = {
+#    enable = true;
+#    numlock.enable = true;
+#    pointerCursor = {
+#      name = "Dracula-cursors";
+#      package = pkgs.dracula-theme;
+#      size = 16;
+#    };
+#  };
+
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Dracula";
+      package = pkgs.dracula-theme;
+    };
+    iconTheme = {
+      name = "Papirus-Dark";
+      package = pkgs.papirus-icon-theme;
+    };
+    font = {
+      name = "FiraCode Nerd Font Mono Medium";
+    };
+  };
+
+  programs.git = {
+    enable = true;
+    userName = "Jaus_Hwang";
+    userEmail = "jaus_hwang@88.com";
+    extraConfig = { init = { defaultBranch = "main"; }; };
+  };
+}
