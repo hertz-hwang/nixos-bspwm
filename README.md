@@ -2,9 +2,9 @@
 
 ## preview :
 
-![Bspwm+Polybar for Nord Color Scheme](./resources/preview.png "preview")
+![Bspwm+Polybar for Nord Color Scheme](./conf/wallpapers/preview.png "preview")
 
 
 ## Wallpaper :
 
-![NixOS](./resources/NixOS.png "wallpaper")
+![NixOS](./conf/wallpapers/NixOS.png "wallpaper")
