@@ -95,7 +95,6 @@
     vivaldi
     vivaldi-widevine
     vivaldi-ffmpeg-codecs
-    xfce.thunar
     mpd
     xorg.xhost
     xdotool

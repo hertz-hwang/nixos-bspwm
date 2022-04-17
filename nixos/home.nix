@@ -80,6 +80,7 @@
     packages = with pkgs; [
       neofetch
       bpytop
+      xfce.thunar
       pulsemixer
       polybar
       htop
