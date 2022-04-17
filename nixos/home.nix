@@ -8,6 +8,8 @@
     ../modules/picom/home.nix
     ../modules/kitty/home.nix
     ../modules/feh/home.nix
+    ../modules/zsh/home.nix
+    ../modules/fcitx5/home.nix
   ];
 
   home = {
@@ -25,6 +27,10 @@
       ".local/share/fonts" = {
 	recursive = true;
         source = config.lib.file.mkOutOfStoreSymlink ../conf/fonts;
+      };
+      ".local/share/fcitx5" = {
+	recursive = true;
+        source = config.lib.file.mkOutOfStoreSymlink ../conf/fcitx5;
       };
       "Pictures/wallpapers" = {
 	recursive = true;

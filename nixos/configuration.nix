@@ -69,8 +69,9 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${user} = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "audio" "jackaudio" "video" "lp" "networkmanager" "kvm" "libvirtd" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "input" "audio" "jackaudio" "video" "lp" "networkmanager" "kvm" "libvirtd" ]; # Enable ‘sudo’ for the user.
     initialPassword = "0072";
+    shell = pkgs.zsh;
   };
   security = {
     sudo.enable = false;
