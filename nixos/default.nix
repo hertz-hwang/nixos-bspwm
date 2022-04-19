@@ -1,4 +1,4 @@
-{ lib, inputs, system, home-manager, user, ... }:
+{ lib, inputs, system, home-manager, user, rec, ... }:
 
 {
   world = lib.nixosSystem {
@@ -20,6 +20,7 @@
 	  };
 	};
       }
+      musnix.nixosModules.musnix
     ];
   };
 }
