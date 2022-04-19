@@ -9,11 +9,11 @@
     };
     musnix = {
       url = github:musnix/musnix;
-      inputs.nixpkgs.foolows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = inputs @ { self, nixpkgs, home-manager, musnix ... }:
+  outputs = inputs @ { self, nixpkgs, home-manager, musnix, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {

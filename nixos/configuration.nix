@@ -100,6 +100,8 @@
     xdotool
     python3Full
     lm_sensors
+    calf
+    lsp-plugins
   ];
   
   nixpkgs.overlays = [

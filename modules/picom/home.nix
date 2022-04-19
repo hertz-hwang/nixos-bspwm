@@ -36,7 +36,7 @@
       transition-pow-w = 0.7;
       transition-pow-h = 0.7;
       size-transition = true;
-      corner-radius = 0.0;
+      corner-radius = 20.0;
       round-borders = 4;
       rounded-corners-exclude = [
         "class_g = 'Polybar'",

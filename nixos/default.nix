@@ -20,7 +20,11 @@
 	  };
 	};
       }
-      musnix.nixosModules.musnix
+      musnix.nixosModules.musnix {
+        musnix = {
+	  enable = true;
+	};
+      }
     ];
   };
 }

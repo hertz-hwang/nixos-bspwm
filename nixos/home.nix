@@ -2,6 +2,7 @@
 {
 
   imports = [
+    ./apps.nix
     ../modules/desk-env/bspwm/home.nix
     ../modules/desk-env/sxhkd/home.nix
     ../modules/rofi/home.nix
@@ -72,30 +73,7 @@
 	recursive = true;
         source = config.lib.file.mkOutOfStoreSymlink ../conf/jack-sessions;
       };
-      "Music/ardour/default" = {
-	recursive = true;
-        source = config.lib.file.mkOutOfStoreSymlink ../conf/ardour-default;
-      };
     };
-    packages = with pkgs; [
-      neofetch
-      bpytop
-      xfce.thunar
-      pulsemixer
-      polybar
-      htop
-      leafpad
-      tdesktop
-      flameshot
-      qjackctl
-      pavucontrol
-      ardour
-      lv2
-      calf
-      lsp-plugins
-      cava
-      ncmpcpp
-    ];
   };
 
   nixpkgs.config.allowUnfree = true;
