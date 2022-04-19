@@ -1,4 +1,4 @@
-{ lib, inputs, system, home-manager, user, rec, ... }:
+{ lib, inputs, system, home-manager, user, musnix, ... }:
 
 {
   world = lib.nixosSystem {

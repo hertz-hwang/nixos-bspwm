@@ -13,7 +13,7 @@
     };
   };
 
-  outputs = inputs @ { self, nixpkgs, home-manager, rec, ... }:
+  outputs = inputs @ { self, nixpkgs, home-manager, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -26,7 +26,7 @@
       nixosConfigurations = (
         import ./nixos {
 	  inherit (nixpkgs) lib;
-	  inherit inputs user system home-manager rec;
+	  inherit inputs user system home-manager musnix;
 	}
       );
     };
